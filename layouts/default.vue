@@ -7,12 +7,13 @@
           <div class="navbar-inner">
             <a href="index-logined.html" class="sui-brand"><img src="~/assets/img/logo.png" alt="社交"/></a>
             <ul class="sui-nav">
-              <li class="active"><a href="./headline-logined.html">头条</a></li>
-              <li><a href="./qa-logined.html">问答</a></li>
-              <li><a href="./activity-index.html">活动</a></li>
-              <li><a href="./makeFriends-index.html">交友</a></li>
-              <li><a href="./spit-index.html">吐槽</a></li>
-              <li><a href="./recruit-index.html">招聘</a></li>
+              <!--路由导航   active-class="active"  exact 来匹配windows.location中的url是否和路由的路径相同,相同的话,就会成为选中的状态-->
+              <nuxt-link to="/" tag="li" active-class="active" exact><a>头条</a></nuxt-link>
+              <nuxt-link to="/question" tag="li" active-class="active" exact><a>问答</a></nuxt-link>
+              <nuxt-link to="/activity" tag="li" active-class="active" exact><a>活动</a></nuxt-link>
+              <nuxt-link to="/friend" tag="li" active-class="active" exact><a>交友</a></nuxt-link>
+              <nuxt-link to="/spit" tag="li" active-class="active" exact><a>吐槽</a></nuxt-link>
+              <nuxt-link to="/recruit" tag="li" active-class="active" exact><a>招聘</a></nuxt-link>
             </ul>
             <form class="sui-form sui-form pull-left">
               <input type="text" placeholder="输入关键词..."/>
