@@ -1,0 +1,127 @@
+<template>
+  <div>
+    <div class="wrapper">
+      <!--头部导航-->
+      <header>
+        <div class="sui-navbar">
+          <div class="navbar-inner">
+            <a href="index-logined.html" class="sui-brand"><img src="~/assets/img/logo.png" alt="社交"/></a>
+            <ul class="sui-nav">
+              <li class="active"><a href="./headline-logined.html">头条</a></li>
+              <li><a href="./qa-logined.html">问答</a></li>
+              <li><a href="./activity-index.html">活动</a></li>
+              <li><a href="./makeFriends-index.html">交友</a></li>
+              <li><a href="./spit-index.html">吐槽</a></li>
+              <li><a href="./recruit-index.html">招聘</a></li>
+            </ul>
+            <form class="sui-form sui-form pull-left">
+              <input type="text" placeholder="输入关键词..."/>
+              <!--              <span class="btn-search fa fa-search"></span>-->
+            </form>
+            <div class="sui-nav pull-right info">
+              <li><a href="./other-notice.html" target="_blank" class="notice">小强</a></li>
+              <li><a href="./person-homepage.html" target="_blank" class="homego"><img
+                src="~/assets/img/widget-photo.png" alt="用户头像"/></a></li>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <nuxt />
+    <!--底部版权-->
+    <div class="footer">
+      <div class="wrapper">
+        <div class="footer-bottom">
+          <div class="link">
+            <dl>
+              <dt>
+                网站相关
+              </dt>
+              <dd>
+                关于我们
+              </dd>
+              <dd>
+                服务条款
+              </dd>
+              <dd>
+                帮助中心
+              </dd>
+              <dd>
+                编辑器语法
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                常用链接
+              </dt>
+              <dd>
+                矽鼎科技
+              </dd>
+              <dd>
+                XX论坛
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                联系我们
+              </dt>
+              <dd>
+                联系我们
+              </dd>
+              <dd>
+                加入我们
+              </dd>
+              <dd>
+                建议反馈
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                关注我们
+              </dt>
+              <dd>
+                微博
+              </dd>
+              <dd>
+                twitter
+              </dd>
+            </dl>
+            <div class="xuke">
+              <h3>内容介绍</h3>
+              <p>本站所有内容仅取之于网络，感谢原作者。</p>
+            </div>
+          </div>
+          <p class="Copyright">Copyright © 2019 XXX社区 当前版本 1.0.0</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<script>
+
+    /*
+  <link rel="stylesheet" type="text/css" href="./plugins/normalize-css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="./plugins/yui/cssgrids-min.css"/>
+    <link rel="stylesheet" type="text/css" href="./plugins/sui/sui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./plugins/sui/sui-append.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./plugins/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/widget-base.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/widget-head-foot.css"/>
+   */
+    import '~/assets/plugins/normalize-css/normalize.css'
+    import '~/assets/plugins/yui/cssgrids-min.css'
+    import '~/assets/plugins/sui/sui.min.css'
+    import '~/assets/plugins/sui/sui-append.min.css'
+    import '~/assets/plugins/font-awesome/css/font-awesome.min.css'
+    import '~/assets/css/widget-base.css'
+    import '~/assets/css/widget-head-foot.css'
+    //必须加这句代码
+    export default {}
+
+</script>
+
+<style>
+
+</style>
