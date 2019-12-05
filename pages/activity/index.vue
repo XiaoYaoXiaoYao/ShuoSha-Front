@@ -11,7 +11,7 @@
             <div class="activity-inner">
               <a href="http://"></a>
               <div class="img">
-                <a href="./activity-detail.html" target="_blank"><img v-bind:src="item.image" alt=""/></a>
+                <a href="/activity/1" target="_blank"><img v-bind:src="item.image" alt=""/></a>
               </div>
               <div class="text">
                 <p class="title" >{{item.name}}</p>

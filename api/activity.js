@@ -10,8 +10,18 @@ export default {
       method : 'post',
       data : queryPOJO
     });
+  },
+  findById(id){
+    return  request({
+      url : `/activity/${id}`,
+      method: 'get'
+
+
+    })
+
 
   }
+
 
 
 }
