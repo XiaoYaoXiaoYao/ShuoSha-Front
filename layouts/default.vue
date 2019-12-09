@@ -9,7 +9,7 @@
             <ul class="sui-nav">
               <!--路由导航   active-class="active"  exact 来匹配windows.location中的url是否和路由的路径相同,相同的话,就会成为选中的状态-->
               <nuxt-link to="/" tag="li" active-class="active" exact><a>头条</a></nuxt-link>
-              <nuxt-link to="/question" tag="li" active-class="active" exact><a>问答</a></nuxt-link>
+              <nuxt-link to="/questions" tag="li" active-class="active" exact><a>问答</a></nuxt-link>
               <nuxt-link to="/activity" tag="li" active-class="active" exact><a>活动</a></nuxt-link>
               <nuxt-link to="/friend" tag="li" active-class="active" exact><a>交友</a></nuxt-link>
               <nuxt-link to="/spit" tag="li" active-class="active" exact><a>吐槽</a></nuxt-link>
@@ -26,7 +26,7 @@
             <div v-show="user.token != undefined" class="sui-nav pull-right info">
               <li><a href="./other-notice.html" target="_blank" class="notice">{{ user.name }}</a></li>
               <li><a href="./person-homepage.html" target="_blank" class="homego">
-                <img :src="user.avatar" alt="用户头像"/></a>
+                <el-image :src="user.avatar" alt="用户头像"/></a>
               </li>
               <li><button @click="logout">退出登录</button></li>
             </div>

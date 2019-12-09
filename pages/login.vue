@@ -122,8 +122,15 @@
                 console.log(resp.data.data.avatar);
                 setUser(resp.data.data.token, resp.data.data.name, resp.data.data.avatar);
 
-                // 跳转到首页
-                location.href = "/";
+                // 获取url的值
+                let url = this.$route.query.url;
+                if (url == undefined) {
+                    // 跳转到首页
+                    location.href = "/";
+                }else{
+                    location.href = url;
+                }
+
             }).catch(error => {
                 console.log(error)
             })
