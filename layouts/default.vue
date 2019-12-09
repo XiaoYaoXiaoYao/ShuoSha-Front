@@ -19,10 +19,16 @@
               <input type="text" placeholder="输入关键词..."/>
               <!--              <span class="btn-search fa fa-search"></span>-->
             </form>
-            <div class="sui-nav pull-right info">
-              <li><a href="./other-notice.html" target="_blank" class="notice">小强</a></li>
-              <li><a href="./person-homepage.html" target="_blank" class="homego"><img
-                src="~/assets/img/widget-photo.png" alt="用户头像"/></a></li>
+
+            <div v-show="user.token == undefined" class="sui-nav pull-right info">
+              <li><a href="/login">登陆</a></li>
+            </div>
+            <div v-show="user.token != undefined" class="sui-nav pull-right info">
+              <li><a href="./other-notice.html" target="_blank" class="notice">{{ user.name }}</a></li>
+              <li><a href="./person-homepage.html" target="_blank" class="homego">
+                <img :src="user.avatar" alt="用户头像"/></a>
+              </li>
+              <li><button @click="logout">退出登录</button></li>
             </div>
           </div>
         </div>
@@ -118,8 +124,26 @@
     import '~/assets/plugins/font-awesome/css/font-awesome.min.css'
     import '~/assets/css/widget-base.css'
     import '~/assets/css/widget-head-foot.css'
+    import {getUser, removeUser} from "@/utils/userinfo"
     //必须加这句代码
-    export default {}
+    export default {
+        data(){
+            return {
+                user: {}
+            }
+
+        },
+        created() {
+            this.user = getUser();
+        },
+        methods:{
+            logout(){
+                // 退出登录，清除用户数据
+                removeUser();
+                location.href = "/";
+            }
+        }
+    }
 
 </script>
 

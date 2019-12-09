@@ -1,5 +1,5 @@
 <template>
-  <div>
+    <div class="sui-container wrapper">
     <!--三列布局-->
     <div class="sj-content">
       <div class="left-nav">

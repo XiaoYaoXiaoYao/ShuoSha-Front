@@ -6,13 +6,16 @@
           <div class="tc-data-list">
             <div class="tc-list">
               <ul class="detail-list">
-                <li class="qa-item">
+                <li class="qa-item"  v-for="(item,index) in items">
                   <div class="fl record">
                     <div class="number">
                       <div class="border useful">
-                        <p class="usenum"><a href="#" class="zan"><i class="fa fa-thumbs-up "
-                                                                     aria-hidden="true"></i></a></p>
-                        <p class="zannum"> 11 </p>
+                        <p class="usenum"><a href="#" class="zan" v-on:click.prevent="thumbUpClick(index)">
+                          <i  v-if="item.thumb" class="fa fa-thumbs-up color " aria-hidden="true"></i>
+                          <i v-else class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        </a>
+                        </p>
+                        <p class="zannum">  {{ item.thumbUp }}</p>
                       </div>
                       <div class="border answer">
                         <a href="#" class="star"><i class="fa fa-star-o" aria-hidden="true"></i></a>
@@ -20,235 +23,12 @@
                     </div>
                   </div>
                   <div class="info">
-                    <p class="text"><a href="./spit-detail.html" target="_blank">
-                      云栖大会的前身可追溯到2010年的地方与行业网站峰会，开创业内云计算领域专业会议先河；
-                      2011年演变成阿里云开发者大会，成为面向整个云产业生态的大会；到2015年正式更名为“云栖大会”，云栖大会这个全新的品牌，源于云栖联盟，源于大会举办地云栖小镇，源于从2010年到2014年间云计算产业的历史变迁。云栖大会现已成为阿里巴巴集团技术实力和科技生态的全景展示平台，是全球最具影响力的科技展会之一。</a>
+                    <p class="text">
+                      <a :href="'/spit/'+ item._id" target="_blank">{{ item.content }}</a>
                     </p>
                     <div class="other">
                       <div class="fl date">
-                        <span>2017-7-23 12:02</span>
-                      </div>
-                      <div class="fr remark">
-                        <a href="#" data-toggle="modal" data-target="#shareModal" class="share"><i
-                          class="fa fa-share-alt" aria-hidden="true"></i> 分享</a>
-                        <a href="#" data-toggle="modal" data-target="#remarkModal" class="comment"><i
-                          class="fa fa-commenting" aria-hidden="true"></i> 回复</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                </li>
-                <li class="qa-item">
-                  <div class="fl record">
-                    <div class="number">
-                      <div class="border useful">
-                        <p class="usenum"><a href="#" class="zan"><i class="fa fa-thumbs-up "
-                                                                     aria-hidden="true"></i></a></p>
-                        <p class="zannum"> 10 </p>
-                      </div>
-                      <div class="border answer">
-                        <a href="#" class="star"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <p class="text"><a href="./spit-detail.html" target="_blank">
-                      云栖大会的前身可追溯到2010年的地方与行业网站峰会，开创业内云计算领域专业会议先河；
-                      2011年演变成阿里云开发者大会，成为面向整个云产业生态的大会；到2015年正式更名为“云栖大会”，云栖大会这个全新的品牌，源于云栖联盟，源于大会举办地云栖小镇，源于从2010年到2014年间云计算产业的历史变迁。云栖大会现已成为阿里巴巴集团技术实力和科技生态的全景展示平台，是全球最具影响力的科技展会之一。</a>
-                    </p>
-                    <div class="other">
-                      <div class="fl date">
-                        <span>2017-6-22 12:02</span>
-                      </div>
-                      <div class="fr remark">
-                        <a href="#" data-toggle="modal" data-target="#shareModal" class="share"><i
-                          class="fa fa-share-alt" aria-hidden="true"></i> 分享</a>
-                        <a href="#" data-toggle="modal" data-target="#remarkModal" class="comment"><i
-                          class="fa fa-commenting" aria-hidden="true"></i> 回复</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                </li>
-                <li class="qa-item">
-                  <div class="fl record">
-                    <div class="number">
-                      <div class="border useful">
-                        <p class="usenum"><a href="#" class="zan"><i class="fa fa-thumbs-up "
-                                                                     aria-hidden="true"></i></a></p>
-                        <p class="zannum"> 12 </p>
-                      </div>
-                      <div class="border answer">
-                        <a href="#" class="star"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <p class="text"><a href="./spit-detail.html" target="_blank">
-                      云栖大会的前身可追溯到2010年的地方与行业网站峰会，开创业内云计算领域专业会议先河；
-                      2011年演变成阿里云开发者大会，成为面向整个云产业生态的大会；到2015年正式更名为“云栖大会”，云栖大会这个全新的品牌，源于云栖联盟，源于大会举办地云栖小镇，源于从2010年到2014年间云计算产业的历史变迁。云栖大会现已成为阿里巴巴集团技术实力和科技生态的全景展示平台，是全球最具影响力的科技展会之一。</a>
-                    </p>
-                    <div class="other">
-                      <div class="fl date">
-                        <span>2017-6-22 12:02</span>
-                      </div>
-                      <div class="fr remark">
-                        <a href="#" data-toggle="modal" data-target="#shareModal" class="share"><i
-                          class="fa fa-share-alt" aria-hidden="true"></i> 分享</a>
-                        <a href="#" data-toggle="modal" data-target="#remarkModal" class="comment"><i
-                          class="fa fa-commenting" aria-hidden="true"></i> 回复</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                </li>
-                <li class="qa-item">
-                  <div class="fl record">
-                    <div class="number">
-                      <div class="border useful">
-                        <p class="usenum"><a href="#" class="zan"><i class="fa fa-thumbs-up "
-                                                                     aria-hidden="true"></i></a></p>
-                        <p class="zannum"> 10 </p>
-                      </div>
-                      <div class="border answer">
-                        <a href="#" class="star"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <p class="text"><a href="./spit-detail.html" target="_blank">
-                      云栖大会的前身可追溯到2010年的地方与行业网站峰会，开创业内云计算领域专业会议先河；
-                      2011年演变成阿里云开发者大会，成为面向整个云产业生态的大会；到2015年正式更名为“云栖大会”，云栖大会这个全新的品牌，源于云栖联盟，源于大会举办地云栖小镇，源于从2010年到2014年间云计算产业的历史变迁。云栖大会现已成为阿里巴巴集团技术实力和科技生态的全景展示平台，是全球最具影响力的科技展会之一。</a>
-                    </p>
-                    <div class="other">
-                      <div class="fl date">
-                        <span>2017-4-22 12:02</span>
-                      </div>
-                      <div class="fr remark">
-                        <a href="#" data-toggle="modal" data-target="#shareModal" class="share"><i
-                          class="fa fa-share-alt" aria-hidden="true"></i> 分享</a>
-                        <a href="#" data-toggle="modal" data-target="#remarkModal" class="comment"><i
-                          class="fa fa-commenting" aria-hidden="true"></i> 回复</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                </li>
-                <li class="qa-item">
-                  <div class="fl record">
-                    <div class="number">
-                      <div class="border useful">
-                        <p class="usenum"><a href="#" class="zan"><i class="fa fa-thumbs-up "
-                                                                     aria-hidden="true"></i></a></p>
-                        <p class="zannum"> 10 </p>
-                      </div>
-                      <div class="border answer">
-                        <a href="#" class="star"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <p class="text"><a href="./spit-detail.html" target="_blank">
-                      面试说通过了要回去等offer，现在都两周了，还说在ceo审批，两天联系hr一次。面试说通过了，要回去等offer，现在都两周了还说在ceo审批，两天联系hr一次，都说还在等审批，什么情况？？工资什么的都谈好了，也要了工资证明。也工资证明。 </a>
-                    </p>
-                    <div class="other">
-                      <div class="fl date">
-                        <span>2017-1-22 12:02</span>
-                      </div>
-                      <div class="fr remark">
-                        <a href="#" data-toggle="modal" data-target="#shareModal" class="share"><i
-                          class="fa fa-share-alt" aria-hidden="true"></i> 分享</a>
-                        <a href="#" data-toggle="modal" data-target="#remarkModal" class="comment"><i
-                          class="fa fa-commenting" aria-hidden="true"></i> 回复</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                </li>
-                <li class="qa-item">
-                  <div class="fl record">
-                    <div class="number">
-                      <div class="border useful">
-                        <p class="usenum"><a href="#" class="zan"><i class="fa fa-thumbs-up "
-                                                                     aria-hidden="true"></i></a></p>
-                        <p class="zannum"> 12 </p>
-                      </div>
-                      <div class="border answer">
-                        <a href="#" class="star"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <p class="text"><a href="./spit-detail.html" target="_blank">
-                      云栖大会的前身可追溯到2010年的地方与行业网站峰会，开创业内云计算领域专业会议先河；
-                      2011年演变成阿里云开发者大会，成为面向整个云产业生态的大会；到2015年正式更名为“云栖大会”，云栖大会这个全新的品牌，源于云栖联盟，源于大会举办地云栖小镇，源于从2010年到2014年间云计算产业的历史变迁。云栖大会现已成为阿里巴巴集团技术实力和科技生态的全景展示平台，是全球最具影响力的科技展会之一。</a>
-                    </p>
-                    <div class="other">
-                      <div class="fl date">
-                        <span>2017-6-22 12:02</span>
-                      </div>
-                      <div class="fr remark">
-                        <a href="#" data-toggle="modal" data-target="#shareModal" class="share"><i
-                          class="fa fa-share-alt" aria-hidden="true"></i> 分享</a>
-                        <a href="#" data-toggle="modal" data-target="#remarkModal" class="comment"><i
-                          class="fa fa-commenting" aria-hidden="true"></i> 回复</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                </li>
-                <li class="qa-item">
-                  <div class="fl record">
-                    <div class="number">
-                      <div class="border useful">
-                        <p class="usenum"><a href="#" class="zan"><i class="fa fa-thumbs-up "
-                                                                     aria-hidden="true"></i></a></p>
-                        <p class="zannum"> 10 </p>
-                      </div>
-                      <div class="border answer">
-                        <a href="#" class="star"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <p class="text"><a href="./spit-detail.html" target="_blank">
-                      云栖大会的前身可追溯到2010年的地方与行业网站峰会，开创业内云计算领域专业会议先河；
-                      2011年演变成阿里云开发者大会，成为面向整个云产业生态的大会；到2015年正式更名为“云栖大会”，云栖大会这个全新的品牌，源于云栖联盟，源于大会举办地云栖小镇，源于从2010年到2014年间云计算产业的历史变迁。云栖大会现已成为阿里巴巴集团技术实力和科技生态的全景展示平台，是全球最具影响力的科技展会之一。</a>
-                    </p>
-                    <div class="other">
-                      <div class="fl date">
-                        <span>2017-4-22 12:02</span>
-                      </div>
-                      <div class="fr remark">
-                        <a href="#" data-toggle="modal" data-target="#shareModal" class="share"><i
-                          class="fa fa-share-alt" aria-hidden="true"></i> 分享</a>
-                        <a href="#" data-toggle="modal" data-target="#remarkModal" class="comment"><i
-                          class="fa fa-commenting" aria-hidden="true"></i> 回复</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                </li>
-                <li class="qa-item">
-                  <div class="fl record">
-                    <div class="number">
-                      <div class="border useful">
-                        <p class="usenum"><a href="#" class="zan"><i class="fa fa-thumbs-up "
-                                                                     aria-hidden="true"></i></a></p>
-                        <p class="zannum"> 10 </p>
-                      </div>
-                      <div class="border answer">
-                        <a href="#" class="star"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info">
-                    <p class="text"><a href="./spit-detail.html" target="_blank">
-                      面试说通过了要回去等offer，现在都两周了，还说在ceo审批，两天联系hr一次。面试说通过了，要回去等offer，现在都两周了还说在ceo审批，两天联系hr一次，都说还在等审批，什么情况？？工资什么的都谈好了，也要了工资证明。也工资证明。 </a>
-                    </p>
-                    <div class="other">
-                      <div class="fl date">
-                        <span>2017-1-22 12:02</span>
+                        <span>{{ item.publishTime }}</span>
                       </div>
                       <div class="fr remark">
                         <a href="#" data-toggle="modal" data-target="#shareModal" class="share"><i
@@ -303,8 +83,42 @@
    */
 
   import  "@/assets/css/page-sj-spit-index.css"
+  import spitApi from '@/api/spit'
     export default {
-        name: "index"
+        name: "index",
+        asyncData(){
+            return spitApi.getList(1,10).then(resp=>{
+                return {items: resp.data.data.rows}
+            }).catch(error=>{
+                console.log(error);
+            });
+        },
+
+        methods:{
+            thumbUpClick(index){
+                //console.log("点击了" + item.content);
+                // 设置点赞状态
+                if(this.items[index].thumb){
+                    // 已经点赞
+                    this.items[index].thumbUp--;
+                    this.items[index].thumb = false;
+                }else{
+                    this.items[index].thumbUp++;
+                    this.items[index].thumb = true;
+                }
+                 //this.items[index].thumb = true;
+                //发起点赞请求
+                spitApi.thumbup(this.items[index]._id).then(resp =>{
+                    console.log(resp.data)
+                }).catch(error => {
+                    console.log(error)
+                })
+
+            }
+
+
+        }
+
     }
 </script>
 
